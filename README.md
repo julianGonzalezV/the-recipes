@@ -25,3 +25,37 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+## Useful commands
+Install nvm:
+	https://github.com/coreybutler/nvm-windows/releases
+
+Install angular cli:
+	npm install -g @angular/cli
+	
+	
+ng version
+
+
+
+for creating a new project:
+	ng new the-recipes
+
+
+To create a project whitout installing ng
+
+npx -p @angular/cli ng new my-project
+Enter the path with your project
+
+cd my-project
+To create module, service, component or others use same this
+
+npm run ng -g module my-module
+To start serve
+
+npm run ng serve
+To rum tests
+
+npm run ng test
