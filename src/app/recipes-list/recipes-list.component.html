@@ -1,9 +1,11 @@
 <div>
-    <div *ngFor="let recipe of recipes">
-        <a routerLink="['/recipes/123']">
+    @for(recipe of recipes; track recipe.id){
+        <a routerLink="/recipes/{{recipe.id}}">
             <h3>
                 {{recipe.name}}
             </h3>
         </a>
-    </div>
+    }@empty {
+        Empty recipe list
+    }
 </div>
