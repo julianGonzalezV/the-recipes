@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Recipe } from '../types';
+import { fakeRecipes } from '../fake-data';
+//import { CommonModule } from '@angular/common'; required to old ngFor implementation, also include it 
+// ino imports: [] bellow
 
 @Component({
   selector: 'app-recipes-list',
@@ -7,6 +11,14 @@ import { Component } from '@angular/core';
   templateUrl: './recipes-list.component.html',
   styleUrl: './recipes-list.component.css'
 })
-export class RecipesListComponent {
+export class RecipesListComponent implements OnInit {
+  recipes: Recipe[] = [];
+
+  constructor(){}
+
+  ngOnInit(){
+    this.recipes = fakeRecipes;
+
+  }
 
 }
