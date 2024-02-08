@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { fakeRecipes } from '../fake-data';
 import { Recipe } from '../types';
 
@@ -12,21 +12,22 @@ import { Recipe } from '../types';
 })
 export class InfoRecipeComponent implements OnInit{
 
-   recipe:Recipe =  <Recipe>{}
+  @Input('id') recipeId!:string;
+  
+   recipe!:Recipe;
 
   /**
    * ActivatedRoute Provides access to information about a route associated with a 
    * component that is loaded in an outlet (in this case the :id of the specific recipe)
    * @param route 
    */
-  constructor(private route:ActivatedRoute){
+  constructor(){
 
   }
 
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.recipe = fakeRecipes.find((recipe:Recipe) => recipe.id === id)!;
+    this.recipe = fakeRecipes.find((recipe:Recipe) => recipe.id === this.recipeId)!;
   }
 
 }

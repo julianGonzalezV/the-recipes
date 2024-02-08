@@ -1,1 +1,10 @@
-<p>edit-recipe works!</p>
+<div>
+    <h2>Editar receta</h2>
+    <app-recipe-data-form 
+    buttonText="Guardar cambios"
+    [currentName]="currentRecipe.name"
+    [currentDescription]="currentRecipe.description"
+    (onSubmitEvent)="onSubmit()"
+    >
+    </app-recipe-data-form>
+</div>

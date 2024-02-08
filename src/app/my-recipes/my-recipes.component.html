@@ -1,0 +1,19 @@
+<div>
+    <a routerLink="/new-recipe">
+        <button>Crear mi receta</button>
+    </a>
+
+    @for(recipe of recipes; track recipe.id){
+        <h3>{{recipe.name}}</h3>
+        <p>{{recipe.description}}</p>        
+        <div>
+            <a routerLink="/edit-recipe/{{recipe.id}}">
+                <button>Editar</button>
+            </a>
+        </div>
+        <button (click)="onDelete(recipe.id)">Eliminar</button>
+    }@empty {
+        Empty recipe list
+    }
+    
+</div>

@@ -1,0 +1,11 @@
+<form (ngSubmit) ="onSavedClicked()">
+    <div for="name">
+        <label>Nombre de la receta:</label>
+    </div>
+    <input type="text" name="name" id="name" [(ngModel)]="name" />
+    <div for="description">
+        <label>Descripcion:</label>
+    </div>
+    <input type="text" name="description" id="description" [(ngModel)]="description" />
+    <button type="submit">{{buttonText}}</button>
+</form>
