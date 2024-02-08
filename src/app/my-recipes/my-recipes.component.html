@@ -1,19 +1,25 @@
-<div>
-    <a routerLink="/new-recipe">
-        <button>Crear mi receta</button>
-    </a>
-
-    @for(recipe of recipes; track recipe.id){
-        <h3>{{recipe.name}}</h3>
-        <p>{{recipe.description}}</p>        
-        <div>
-            <a routerLink="/edit-recipe/{{recipe.id}}">
-                <button>Editar</button>
-            </a>
-        </div>
-        <button (click)="onDelete(recipe.id)">Eliminar</button>
-    }@empty {
-        Empty recipe list
-    }
-    
+<div class="container main-container">
+    <h1>Mis recetas </h1><small>(Recetas que he guardado tomandolas de otros o que son de mi autoría)</small>.
+    <hr>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @for(recipe of recipes; track recipe.id){
+            <div class="col">
+                <div class="card w-55 h-100">
+                  <img src="{{recipe.imageUrl}}" class="card-img-top" alt="...">
+                  <div class="card-body" >
+                    <h5 class="card-title">{{recipe.name}}</h5>
+                    <p class="card-text">{{recipe.description}}</p>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a routerLink="/recipes/{{recipe.id}}" class="btn btn-outline-info btn-sm">¿Cómo prepararlo?</a>
+                        <a routerLink="/edit-recipe/{{recipe.id}}" class="btn btn-outline-success btn-sm">Editar receta</a>
+                        <a class="btn btn-outline-danger btn-sm" (click)="onDelete(recipe.id)">Eliminar</a>
+                    </div>                    
+                  </div>
+                </div>
+             </div>        
+        }@empty {
+            Empty recipe list
+        }
+      </div>
 </div>

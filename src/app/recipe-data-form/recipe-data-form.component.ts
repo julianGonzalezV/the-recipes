@@ -40,6 +40,7 @@ export class RecipeDataFormComponent implements OnInit{
       name: this.name,
       description:this.description,
       ingredients: [],
+      imageUrl:"",
     });
     this.router.navigateByUrl('my-recipes');
   }
