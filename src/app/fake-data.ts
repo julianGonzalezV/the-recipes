@@ -2,7 +2,7 @@ import {Recipe} from './types'
 
 export const fakeRecipes:Recipe[] = [{
     id: '123',
-    name: 'Bandeja Paisa',
+    name: 'Bandeja Paisita',
     description: 'A very heavy food goes into yuor stomach',
     ingredients: ['beans','rice','pork'],
 },
@@ -15,6 +15,24 @@ export const fakeRecipes:Recipe[] = [{
 {
     id: '125',
     name: 'Higado encebollado',
+    description: 'A very heavy food goes into yuor stomach',
+    ingredients: ['beans','rice','pork'],
+},
+{
+    id: '126',
+    name: 'Sopa de Lentejas',
+    description: 'A very heavy food goes into yuor stomach',
+    ingredients: ['beans','rice','pork'],
+},
+{
+    id: '126',
+    name: 'Sopa de Lentejas',
+    description: 'A very heavy food goes into yuor stomach',
+    ingredients: ['beans','rice','pork'],
+},
+{
+    id: '126',
+    name: 'Sopa de Lentejas',
     description: 'A very heavy food goes into yuor stomach',
     ingredients: ['beans','rice','pork'],
 },
