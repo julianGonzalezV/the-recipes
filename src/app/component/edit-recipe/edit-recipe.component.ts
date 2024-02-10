@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RecipeDataFormComponent } from '../recipe-data-form/recipe-data-form.component';
 import { Router } from '@angular/router';
-import { Recipe } from '../types';
-import { fakeRecipes } from '../fake-data';
+import { Recipe } from '../../types';
+import { fakeRecipes } from '../../fake-data';
 
 
 @Component({

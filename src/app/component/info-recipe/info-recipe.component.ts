@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { fakeRecipes } from '../fake-data';
-import { Recipe } from '../types';
+import { fakeRecipes } from '../../fake-data';
+import { Recipe } from '../../types';
 
 @Component({
   selector: 'app-info-recipe',

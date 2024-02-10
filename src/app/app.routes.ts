@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { RecipesListComponent } from './recipes-list/recipes-list.component';
-import { InfoRecipeComponent } from './info-recipe/info-recipe.component';
-import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
-import { NewRecipeComponent } from './new-recipe/new-recipe.component';
-import { MyRecipesComponent } from './my-recipes/my-recipes.component';
+import { RecipesListComponent } from './component/recipes-list/recipes-list.component';
+import { InfoRecipeComponent } from './component/info-recipe/info-recipe.component';
+import { EditRecipeComponent } from './component/edit-recipe/edit-recipe.component';
+import { NewRecipeComponent } from './component/new-recipe/new-recipe.component';
+import { MyRecipesComponent } from './component/my-recipes/my-recipes.component';
 
 export const routes: Routes = [
     {'path': '', redirectTo: '/recipes', pathMatch:'full'},
