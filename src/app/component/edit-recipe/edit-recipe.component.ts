@@ -24,7 +24,7 @@ export class EditRecipeComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.currentRecipe = fakeRecipes.find( recipe => recipe.id===this.recipeId)!;
+    this.currentRecipe = fakeRecipes.find( recipe => recipe.code===this.recipeId)!;
   }
 
   onSubmit(){

@@ -1,8 +1,9 @@
 <div class="container main-container">
     <h1>Mis recetas </h1><small>(Recetas que he guardado tomandolas de otros o que son de mi autoría)</small>.
+    <a routerLink="/new-recipe" class="btn btn-outline-primary btn-sm">Agregar receta</a>
     <hr>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        @for(recipe of recipes; track recipe.id){
+        @for(recipe of recipes; track recipe.code){
             <div class="col">
                 <div class="card w-55 h-100">
                   <img src="{{recipe.imageUrl}}" class="card-img-top" alt="...">
@@ -11,15 +12,15 @@
                     <p class="card-text">{{recipe.description}}</p>
                     
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a routerLink="/recipes/{{recipe.id}}" class="btn btn-outline-info btn-sm">¿Cómo prepararlo?</a>
-                        <a routerLink="/edit-recipe/{{recipe.id}}" class="btn btn-outline-success btn-sm">Editar receta</a>
-                        <a class="btn btn-outline-danger btn-sm" (click)="onDelete(recipe.id)">Eliminar</a>
+                        <a routerLink="/recipes/{{recipe.code}}" class="btn btn-outline-info btn-sm">¿Cómo prepararlo?</a>
+                        <a routerLink="/edit-recipe/{{recipe.code}}" class="btn btn-outline-success btn-sm">Editar receta</a>
+                        <a class="btn btn-outline-danger btn-sm" (click)="onDelete(recipe.code)">Eliminar</a>
                     </div>                    
                   </div>
                 </div>
              </div>        
         }@empty {
-            Empty recipe list
+            <h4>No se encontraron recetas</h4>
         }
       </div>
 </div>

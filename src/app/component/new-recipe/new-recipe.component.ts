@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RecipeDataFormComponent } from '../recipe-data-form/recipe-data-form.component';
+import { RecipeService } from '../../service/recipe.service';
+import { Recipe } from '../../types';
 
 @Component({
   selector: 'app-new-recipe',
@@ -12,7 +14,7 @@ import { RecipeDataFormComponent } from '../recipe-data-form/recipe-data-form.co
 })
 export class NewRecipeComponent implements OnInit{
   
-  constructor(private router:Router){
+  constructor(private router:Router, private recipeService: RecipeService){
 
   }
 
@@ -21,8 +23,8 @@ export class NewRecipeComponent implements OnInit{
   }
 
 
-  onSubmit():void {
-    alert('Creando mi receta...');
-    this.router.navigateByUrl('/my-recipes');
+  addRecipe(recipe:Recipe):void {
+    console.log('recipe to crate ', recipe);
+    this.recipeService.createNew(recipe).subscribe(() => this.router.navigateByUrl('/my-recipes'));
   }
 }

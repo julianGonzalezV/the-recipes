@@ -23,6 +23,8 @@ export class RecipeDataFormComponent implements OnInit{
 
   name:string = '';
   description:string = '';
+  ingredients:string = '';
+  image:string = '';
 
   
   constructor(private router: Router){
@@ -36,11 +38,11 @@ export class RecipeDataFormComponent implements OnInit{
 
   onSavedClicked(): void{
     this.onSubmitEvent.emit({
-      id: "",
+      code: "",
       name: this.name,
       description:this.description,
-      ingredients: [],
-      imageUrl:"",
+      ingredients: this.ingredients.split(','),
+      imageUrl:this.image,
     });
     this.router.navigateByUrl('my-recipes');
   }

@@ -1,11 +1,14 @@
-<div>
-    <a routerLink="/recipes">
-        <button>Volver</button>
-    </a>
-    <h2>{{recipe.name}}</h2>
-    <p>{{recipe.description}}</p>
-    <p>{{recipe.ingredients}}</p>
-    <a routerLink="/edit-recipe/{{recipe.id}}" >
-        <button>Editar</button>
-    </a>
-</div>
+@if (recipe$ | async; as recipe) {
+    <div>
+        <a routerLink="/recipes">
+            <button>Volver</button>
+        </a>
+        <h2>{{recipe.name}}</h2>
+        <p>{{recipe.description}}</p>
+        <p>{{recipe.ingredients}}</p>
+        <a routerLink="/edit-recipe/{{recipe.code}}" >
+            <button>Editar</button>
+        </a>
+    </div>
+}
+

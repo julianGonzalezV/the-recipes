@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Recipe } from '../../types';
-import { fakeRecipes } from '../../fake-data';
 import { RouterLink } from '@angular/router';
+import { RecipeService } from '../../service/recipe.service';
 
 @Component({
   selector: 'app-my-recipes',
@@ -13,18 +13,18 @@ import { RouterLink } from '@angular/router';
 export class MyRecipesComponent {
   recipes: Recipe[] = [];
 
-  constructor(){}
+  constructor(private recipeService: RecipeService){}
 
   ngOnInit(){
-    this.loadData();
+    this.loadAll();
   }
 
-  private loadData(){
-    this.recipes = fakeRecipes;
+  private loadAll(){
+    this.recipeService.getAllRecipes().subscribe(response => this.recipes = response);
   }
 
-  onDelete(recipeId: String):void{
-    alert(`Se va a eliminar la receta ${recipeId}`)
+  onDelete(recipeId: string):void{
+    this.recipeService.detele(recipeId).subscribe( () => this.recipes = this.recipes.filter(recipe => recipe.code !==recipeId));
   }
 
 }
