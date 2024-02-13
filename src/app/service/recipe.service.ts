@@ -42,4 +42,8 @@ export class RecipeService {
     return this.http.delete<Recipe>(`${this.recipeUrl}/${code}`);
   }
 
+  update(recipe: Recipe): Observable<Recipe>{
+    return this.http.put<Recipe>(this.recipeUrl, recipe, httpOptions);
+  }
+
 }
